@@ -123,7 +123,7 @@ class MultipleChoices extends React.Component {
     return (
       <div>
         <p data-testid="question-category">{category}</p>
-        <h1 data-testid="question-text">{ this.encodeString(question) }</h1>
+        <h1 data-testid="question-text">{ question }</h1>
         <div data-testid="answer-options">
           { renderQuestion && shuffledArray.map((answer) => {
             if (answer === correctAnswer) {
@@ -136,7 +136,7 @@ class MultipleChoices extends React.Component {
                   key={ answer }
                   disabled={ timer === 0 }
                 >
-                  {this.encodeString(answer)}
+                  {answer}
                 </button>);
             }
             this.wrongAnswerIndex += 1;
@@ -149,7 +149,7 @@ class MultipleChoices extends React.Component {
                 key={ answer }
                 disabled={ timer === 0 }
               >
-                {this.encodeString(answer)}
+                {answer}
               </button>);
           })}
         </div>
